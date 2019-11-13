@@ -1,2 +1,2 @@
 # HTML-clock
-HTML-CLOCK-TEST
+HTML, CSS & jS based quadrant clock
