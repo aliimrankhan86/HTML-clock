@@ -1,8 +1,8 @@
 /* A clock has 360 degree which is divided into 12 parts and each 12parts are also divided into 5 parts. */
 const degree = 360/(12*5); /* 6 degrees */  
-const hours = document.getElementById("hr");
-const mins = document.getElementById("mn");
-const secs = document.getElementById("sc");
+const hours = document.querySelector(".clock__hour--hand");
+const mins = document.querySelector(".clock__min--hand");
+const secs = document.querySelector(".clock__sec--hand");
 
 /* This function sets hour, minute and seconds as per current time */
 const startClock = () => {
@@ -20,19 +20,6 @@ const startClock = () => {
 
 // start the clock
 let timer = setInterval(startClock);
-
-/* Created Pause / Resume buttons functionality in the commented code */
-/* const pause = document.getElementById('pause');
-const resume = document.getElementById('resume');
-
-pause.addEventListener('click', function() {
-  clearInterval(timer);
-})
-
-resume.addEventListener('click', function() {
-  timer = setInterval(startClock);
-})  */
-
 const checkPause = document.getElementById('check-pause');
 checkPause.addEventListener('change', function() {
 	// if checkbox is checked
@@ -45,4 +32,17 @@ checkPause.addEventListener('change', function() {
   timer = setInterval(startClock);
   }
 })
+
+/* Created Pause / Resume buttons functionality in the commented code */
+const pause = document.getElementById('pause');
+const resume = document.getElementById('resume');
+
+pause.addEventListener('click', function() {
+  clearInterval(timer);
+})
+
+resume.addEventListener('click', function() {
+  timer = setInterval(startClock);
+}) 
+
 
