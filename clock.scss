@@ -11,10 +11,7 @@ $document-font: sans-serif, "Times New Roman";
 $document-font-default-size: 16px;
 $document-font-bold: bold;
 
-
-
 /* Mixins */
-
 @mixin document-font {
   font-family: $document-font;
   font-weight: $document-font-bold;
@@ -56,63 +53,69 @@ body {
   }
 }
 
-.hour, .min, .sec {
+.clock__hour, .clock__min, .clock__sec {
   position: absolute;
 }
 
-.hour, .hr {
+.clock__hour, .clock__hour--hand {
   width: 160px;
   height: 160px;
 }
 
-.min, .mn {
+.clock__min, .clock__min--hand {
   width: 190px;
   height: 190px;
 }
 
-.sec, .sc {
+.clock__sec, .clock__sec--hand {
   width: 230px;
   height: 230px;
 }
 
-.hr, .mn, .sc {
+.clock__hour--hand, .clock__min--hand, .clock__sec--hand {
   display: flex;
   justify-content: center;
   position: absolute;
   border-radius: 50%;
 }
 
-.hr::before {
-  content: " ";
-  position: absolute;
-  width: 8px;
-  height: 80px;
-  background: $dark-grey;
-  z-index: 10;
-  border-radius: 6px 6px 0 0;
+.clock__hour--hand {
+  &::before {
+    content: " ";
+    position: absolute;
+    width: 8px;
+    height: 80px;
+    background: $dark-grey;
+    z-index: 10;
+    border-radius: 6px 6px 0 0;
+  }
 }
 
-.mn::before {
-  content: " ";
-  position: absolute;
-  width: 4px;
-  height: 90px;
-  background: $dark-grey;
-  z-index: 11;
-  border-radius: 6px 6px 0 0;
+.clock__min--hand {
+  &::before {
+    content: " ";
+    position: absolute;
+    width: 4px;
+    height: 90px;
+    background: $dark-grey;
+    z-index: 11;
+    border-radius: 6px 6px 0 0;
+  }
 }
 
-.sc::before {
-  content: " ";
-  position: absolute;
-  width: 2px;
-  height: 150px;
-  background: $black;
-  z-index: 12;
-  border-radius: 6px 6px 0 0;
+.clock__sec--hand {
+  &::before {
+    content: " ";
+    position: absolute;
+    width: 2px;
+    height: 150px;
+    background: $black;
+    z-index: 12;
+    border-radius: 6px 6px 0 0;
+  }
 }
 
-.controls-wrapper {
+.controls, .buttons-wrapper {
   padding: 20px 0 0 0;
   display: flex;
   justify-content: center;
